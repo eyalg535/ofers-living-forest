@@ -18,16 +18,28 @@ header h1 {
 }
 
 .language-toggle {
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 1rem;
-  background: transparent;
-  border: none;
+  background: white;
+  border: 1px solid #2e4d38;
   font-weight: bold;
   color: #2e4d38;
   cursor: pointer;
   font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  z-index: 1100; /* Ensure it's above navbar and overlays */
 }
+@media (max-width: 480px) {
+  .language-toggle {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
 
 .container {
   max-width: 960px;
