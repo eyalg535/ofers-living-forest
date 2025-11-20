@@ -6,10 +6,26 @@
   <title>Ofer's Living Forest</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .lang-switch {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-weight: bold;
+    }
+    .lang-switch a {
+      color: #2e4d38;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+  </style>
 </head>
 <body>
+  <div class="lang-switch">
+    <a href="#" onclick="setLang('en')">English</a> | <a href="#" onclick="setLang('he')">עברית</a>
+  </div>
   <nav class="navbar">
-    <ul>
+    <ul id="nav-links">
       <li><a href="#home">Home</a></li>
       <li><a href="#ofer-story">Ofer’s Story</a></li>
       <li><a href="#vision">Vision</a></li>
@@ -17,107 +33,92 @@
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#support">Support</a></li>
     </ul>
-    <div style="margin-top: 10px;">
-      <a href="#" onclick="setLanguage('en')" style="margin-right: 10px;">English</a> |
-      <a href="#" onclick="setLanguage('he')" style="margin-left: 10px;">עברית</a>
-    </div>
   </nav>
-
   <header>
-    <h1>Ofer's Living Forest</h1>
-    <p>A food forest in memory of our beloved brother</p>
+    <h1 id="title-main">Ofer's Living Forest</h1>
+    <p id="subtitle-main">A food forest in memory of our beloved brother</p>
   </header>
-
+  <section id="home"></section>
   <section class="video-section">
     <div class="container">
       <div class="video">
-        <iframe src="https://www.youtube.com/embed/YyeJEmaOr5Q" allowfullscreen></iframe>
+        <iframe id="video-frame" src="https://www.youtube.com/embed/YyeJEmaOr5Q" allowfullscreen></iframe>
       </div>
     </div>
   </section>
-
-  <!-- English Content -->
-  <div class="english">
-    <section id="ofer-story" class="section card">
-      <div class="container">
-        <h2>Ofer’s Life Story</h2>
-        <p>Ofer Gerby was born on March 2, 1984... [trimmed for space - full text will be restored]</p>
-      </div>
-    </section>
-
-    <section id="vision" class="section card">
-      <div class="container">
-        <h2>The Vision</h2>
-        <p>Behind our family home in Israel lies a 1-acre olive grove... </p>
-      </div>
-    </section>
-
-    <section id="goals" class="section card">
-      <div class="container">
-        <h2>Our Goals</h2>
-        <ul>
-          <li>Create a thriving ecosystem of native and edible plants</li>
-          <li>Welcome families, schools, and nature lovers</li>
-          <li>Honor Ofer through life, beauty, and growth</li>
-        </ul>
-      </div>
-    </section>
-  </div>
-
-  <!-- Hebrew Content -->
-  <div class="hebrew" style="display:none; direction: rtl;">
-    <section id="ofer-story-he" class="section card">
-      <div class="container">
-        <h2>סיפור חייו של עופר</h2>
-        <p>עופר גרבי נולד ב-2 במרץ 1984... [מתורגם במלואו]</p>
-      </div>
-    </section>
-
-    <section id="vision-he" class="section card">
-      <div class="container">
-        <h2>החזון</h2>
-        <p>מאחורי לבית המשפחה שלנו נמצא מצי זיתים של זיתים זיתיים... </p>
-      </div>
-    </section>
-
-    <section id="goals-he" class="section card">
-      <div class="container">
-        <h2>מטרות</h2>
-        <ul>
-          <li>להקים מערכת חיים של צמחים ברים ואכילים</li>
-          <li>לקבל משפחות, בתים ואוהבי טבע</li>
-          <li>לכבד את עופר באמצעות, ביופי, ביופי ובצמיחה</li>
-        </ul>
-      </div>
-    </section>
-  </div>
-
+  <section id="ofer-story" class="section card">
+    <div class="container" id="ofer-story-text"></div>
+  </section>
+  <section id="vision" class="section card">
+    <div class="container" id="vision-text"></div>
+  </section>
+  <section id="goals" class="section card">
+    <div class="container" id="goals-text"></div>
+  </section>
+  <section id="gallery" class="section card">
+    <div class="container" id="gallery-text"></div>
+  </section>
+  <section id="support" class="section card">
+    <div class="container" id="support-text"></div>
+  </section>
   <div class="cta">
-    <p>Join us in growing this legacy forest.</p>
+    <p id="cta-text">Join us in growing this legacy forest.</p>
     <a href="#">Donate Now</a>
   </div>
-
   <footer>
-    <p>In loving memory of Ofer • Built with love by his family</p>
+    <p id="footer-text">In loving memory of Ofer • Built with love by his family</p>
   </footer>
 
   <script>
-    function setLanguage(lang) {
-      const html = document.documentElement;
-      html.lang = lang;
-
-      if (lang === 'he') {
-        document.querySelectorAll('.hebrew').forEach(el => el.style.display = 'block');
-        document.querySelectorAll('.english').forEach(el => el.style.display = 'none');
-        document.querySelector('iframe').src = 'https://www.youtube.com/embed/2MyeHgYZS4c';
-      } else {
-        document.querySelectorAll('.hebrew').forEach(el => el.style.display = 'none');
-        document.querySelectorAll('.english').forEach(el => el.style.display = 'block');
-        document.querySelector('iframe').src = 'https://www.youtube.com/embed/YyeJEmaOr5Q';
+    const content = {
+      en: {
+        nav: ["Home", "Ofer’s Story", "Vision", "Goals", "Gallery", "Support"],
+        title: "Ofer's Living Forest",
+        subtitle: "A food forest in memory of our beloved brother",
+        video: "https://www.youtube.com/embed/YyeJEmaOr5Q",
+        oferStory: `<h2>Ofer’s Life Story</h2><p>Ofer Gerby was born on March 2, 1984... (English content)</p>`,
+        vision: `<h2>The Vision</h2><p>Behind our family home in Israel... (English content)</p>`,
+        goals: `<h2>Our Goals</h2><ul><li>Create a thriving ecosystem...</li></ul>`,
+        gallery: `<h2>Photo Gallery & Forest Plan</h2><p>(Coming soon...)</p>`,
+        support: `<h2>Support the Project</h2><p>Your support helps us...</p>`,
+        cta: "Join us in growing this legacy forest.",
+        footer: "In loving memory of Ofer • Built with love by his family"
+      },
+      he: {
+        nav: ["בית", "סיפורו של עופר", "חזון", "מטרות", "גלריה", "תמיכה"],
+        title: "יער החיים של עופר",
+        subtitle: "יער מאכל לזכר אחינו היקר",
+        video: "https://www.youtube.com/embed/2MyeHgYZS4c",
+        oferStory: `<h2>סיפור חייו של עופר</h2><p>עופר גרבי נולד ב-2 במרץ 1984... (עברית)</p>`,
+        vision: `<h2>החזון</h2><p>מאחורי בית הורינו בישראל... (עברית)</p>`,
+        goals: `<h2>המטרות שלנו</h2><ul><li>יצירת מערכת אקולוגית פורחת...</li></ul>`,
+        gallery: `<h2>גלריית תמונות ותוכנית היער</h2><p>(בקרוב – יתווספו תמונות ותוכנית היער)</p>`,
+        support: `<h2>תמכו בפרויקט</h2><p>התרומה שלכם עוזרת לנו לשתול עצים...</p>`,
+        cta: "הצטרפו אלינו ביצירת יער ההנצחה הזה.",
+        footer: "לזכרו של עופר • נבנה באהבה על ידי משפחתו"
       }
+    };
+
+    function setLang(lang) {
+      const langContent = content[lang];
+      const navItems = document.querySelectorAll(".navbar li a");
+      langContent.nav.forEach((text, i) => navItems[i].textContent = text);
+      document.getElementById("title-main").textContent = langContent.title;
+      document.getElementById("subtitle-main").textContent = langContent.subtitle;
+      document.getElementById("video-frame").src = langContent.video;
+      document.getElementById("ofer-story-text").innerHTML = langContent.oferStory;
+      document.getElementById("vision-text").innerHTML = langContent.vision;
+      document.getElementById("goals-text").innerHTML = langContent.goals;
+      document.getElementById("gallery-text").innerHTML = langContent.gallery;
+      document.getElementById("support-text").innerHTML = langContent.support;
+      document.getElementById("cta-text").textContent = langContent.cta;
+      document.getElementById("footer-text").textContent = langContent.footer;
+
+      document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
     }
 
-    window.onload = () => setLanguage('en');
+    // Default language
+    setLang('en');
   </script>
 </body>
 </html>
