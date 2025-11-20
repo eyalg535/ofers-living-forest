@@ -4,42 +4,48 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ofer's Living Forest</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    #lang-toggle {
+    .lang-switch {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: #fff;
-      border: 1px solid #2e4d38;
-      color: #2e4d38;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
+      top: 20px;
+      right: 20px;
       font-weight: bold;
     }
-    body.hebrew {
-      direction: rtl;
-      font-family: 'Open Sans', sans-serif;
-    }
-    body.hebrew .section h2 {
-      text-align: right;
+    .lang-switch button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-left: 10px;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1 data-en="Ofer's Living Forest" data-he="יער עופר">Ofer's Living Forest</h1>
-    <button id="lang-toggle">עברית | English</button>
-  </header>
-
   <nav class="navbar">
     <ul>
-      <li><a href="#" data-en="Home" data-he="בית">Home</a></li>
-      <li><a href="#about" data-en="About" data-he="על היער">About</a></li>
-      <li><a href="#contact" data-en="Contact" data-he="צור קשר">Contact</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#ofer-story">Ofer’s Story</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#support">Support</a></li>
     </ul>
   </nav>
+  <header>
+    <div class="lang-switch">
+      <button onclick="setLang('en')">English</button>|
+      <button onclick="setLang('he')">עברית</button>
+    </div>
+    <h1 data-en="Ofer's Living Forest" data-he="יער החיים של עופר">Ofer's Living Forest</h1>
+    <p data-en="A food forest in memory of our beloved brother"
+       data-he="יער מזון לזכר אחיננו היקר">A food forest in memory of our beloved brother</p>
+  </header>
+
+  <section id="home"></section>
 
   <section class="video-section">
     <div class="container">
@@ -49,67 +55,71 @@
     </div>
   </section>
 
-  <div class="container">
-    <div class="section card">
-      <h2 data-en="The Past" data-he="העבר">The Past</h2>
-      <p data-en="Behind our parents’ home lies a quiet piece of land… once dry, forgotten… a silent forest filled with memories."
-         data-he="מאחורי הבית של ההורים שלנו יש פיסת אדמה שקטה... פעם יבשה, נשכחת... יער שקט מלא בזיכרונות.">
-        Behind our parents’ home lies a quiet piece of land…
-      </p>
+  <section id="ofer-story" class="section card">
+    <div class="container">
+      <h2 data-en="Ofer’s Life Story" data-he="סיפור חיייו של עופר">Ofer’s Life Story</h2>
+      <p data-en="Ofer Gerby was born on March 2, 1984..."
+         data-he="עופר גרבי נולד בשני 1984...">Ofer Gerby was born on March 2, 1984...</p>
+      <!-- More paragraphs here, each with data-en/data-he -->
     </div>
+  </section>
 
-    <div class="section card">
-      <h2 data-en="The Memory" data-he="הזיכרון">The Memory</h2>
-      <p data-en="This land carries the memory of Ofer — our brother, our hero — who gave his life during his military service. He loved nature, peace, and the simple beauty of the earth."
-         data-he="האדמה הזו נושאת את זכרו של עופר - אחינו, גיבורנו - שנתן את חייו במהלך שירותו הצבאי. הוא אהב טבע, שקט והיופי הפשוט של האדמה.">
-        This land carries the memory of Ofer...
-      </p>
+  <section id="vision" class="section card">
+    <div class="container">
+      <h2 data-en="The Vision" data-he="החזון">The Vision</h2>
+      <p data-en="Behind our family home in Israel lies a 1-acre olive grove..."
+         data-he="מאוחורי לבית המשפחה שלנו מצויה מטר...">Behind our family home in Israel lies a 1-acre olive grove...</p>
     </div>
+  </section>
 
-    <div class="section card">
-      <h2 data-en="The Transformation" data-he="הטרנספורמציה">The Transformation</h2>
-      <p data-en="Today, we’re bringing that beauty back to life — transforming this space into a living food forest. With fig trees, pomegranates, olive groves, wildflowers, and winding paths…"
-         data-he="היום אנחנו מחזירים את היופי לחיים - הופכים את השטח הזה ליער מאכל חי. עם עצי תאנה, רימונים, זיתים, פרחים ושבילים מתפתלים...">
-        Today, we’re bringing that beauty back to life...
-      </p>
+  <section id="goals" class="section card">
+    <div class="container">
+      <h2 data-en="Our Goals" data-he="מטרותינו">Our Goals</h2>
+      <ul>
+        <li data-en="Create a thriving ecosystem of native and edible plants" data-he="להקים מערכת חיים של צמחים ברים ואכילים"></li>
+        <li data-en="Welcome families, schools, and nature lovers" data-he="לקלט משפחות, בתי ספר ואוהבי טבע"></li>
+        <li data-en="Honor Ofer through life, beauty, and growth" data-he="לכבד את עופר בחיים, ביופי ובצמיי7"></li>
+      </ul>
     </div>
+  </section>
 
-    <div class="section card">
-      <h2 data-en="The Experience" data-he="החוויה">The Experience</h2>
-      <p data-en="Children now wander through the trees, tasting fruit, chasing butterflies. Sunlight dances through the leaves. This forest breathes. It gives. It remembers."
-         data-he="ילדים משוטטים בין העצים, טועמים פירות, רודפים אחרי פרפרים. קרני שמש רוקדות בין העלים. היער הזה נושם. הוא נותן. הוא זוכר.">
-        Children now wander through the trees...
-      </p>
+  <section id="gallery" class="section card">
+    <div class="container">
+      <h2 data-en="Photo Gallery & Forest Plan" data-he="גלריית ותכנית היער">Photo Gallery & Forest Plan</h2>
+      <p data-en="(Coming soon – photos and the full reforestation design will be added here.)"
+         data-he="(בקרוב – ותכנית היער יוספקו בקרוב)"></p>
     </div>
+  </section>
 
-    <div class="section card cta">
-      <p data-en="This is Ofer’s forest — a place of growth, of life, of love. Help us plant hope. Help us carry his memory forward, one tree at a time."
-         data-he="זהו יער עופר - מקום של צמיחה, חיים ואהבה. עזרו לנו לשתול תקווה. עזרו לנו להנציח את זכרו, עץ אחר עץ.">
-        This is Ofer’s forest...
-      </p>
-      <a href="#" data-en="Support the Forest" data-he="תמכו ביער">Support the Forest</a>
+  <section id="support" class="section card">
+    <div class="container">
+      <h2 data-en="Support the Project" data-he="תמיכה למיזם">Support the Project</h2>
+      <p data-en="Your support helps us plant trees..."
+         data-he="התמיכה שלך עוזרת לנו לשתול...">Your support helps us plant trees...</p>
     </div>
+  </section>
+
+  <div class="cta">
+    <p data-en="Join us in growing this legacy forest."
+       data-he="צרפו עמנו בהקמת יער הירוש">Join us in growing this legacy forest.</p>
+    <a href="#" data-en="Donate Now" data-he="תרמו עכשוו">Donate Now</a>
   </div>
 
   <footer>
-    <p>&copy; 2025 Ofer's Forest</p>
+    <p data-en="In loving memory of Ofer • Built with love by his family"
+       data-he="לזכר עופר באהבה רבה על ידי משפחתו">In loving memory of Ofer • Built with love by his family</p>
   </footer>
 
   <script>
-    const toggleBtn = document.getElementById('lang-toggle');
-    let isHebrew = false;
-    const hebrewVideo = 'https://www.youtube.com/embed/2MyeHgYZS4c';
-    const englishVideo = 'https://www.youtube.com/embed/YyeJEmaOr5Q';
-
-    toggleBtn.addEventListener('click', () => {
-      isHebrew = !isHebrew;
-      document.body.classList.toggle('hebrew', isHebrew);
-      toggleBtn.textContent = isHebrew ? 'English | עברית' : 'עברית | English';
+    function setLang(lang) {
       document.querySelectorAll('[data-en]').forEach(el => {
-        el.textContent = isHebrew ? el.dataset.he : el.dataset.en;
+        el.textContent = el.dataset[lang];
       });
-      document.getElementById('forest-video').src = isHebrew ? hebrewVideo : englishVideo;
-    });
+      const video = document.getElementById('forest-video');
+      video.src = lang === 'he'
+        ? 'https://www.youtube.com/embed/2MyeHgYZS4c'
+        : 'https://www.youtube.com/embed/YyeJEmaOr5Q';
+    }
   </script>
 </body>
 </html>
