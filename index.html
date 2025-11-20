@@ -67,7 +67,8 @@
   </section>
   <div class="cta">
     <p id="cta-text">Join us in growing this legacy forest.</p>
-    <a href="#">Donate Now</a>
+    <a href="#donate" id="donateButton" class="donate-button">Donate Now</a>
+
   </div>
   <footer>
     <p id="footer-text">In loving memory of Ofer • Built with love by his family</p>
@@ -130,22 +131,29 @@
     };
 
     function setLang(lang) {
-      const langContent = content[lang];
-      const navItems = document.querySelectorAll(".navbar li a");
-      langContent.nav.forEach((text, i) => navItems[i].textContent = text);
-      document.getElementById("title-main").textContent = langContent.title;
-      document.getElementById("subtitle-main").textContent = langContent.subtitle;
-      document.getElementById("video-frame").src = langContent.video;
-      document.getElementById("ofer-story-text").innerHTML = langContent.oferStory;
-      document.getElementById("vision-text").innerHTML = langContent.vision;
-      document.getElementById("goals-text").innerHTML = langContent.goals;
-      document.getElementById("gallery-text").innerHTML = langContent.gallery;
-      document.getElementById("support-text").innerHTML = langContent.support;
-      document.getElementById("cta-text").textContent = langContent.cta;
-      document.getElementById("footer-text").textContent = langContent.footer;
+  const langContent = content[lang];
+  const navItems = document.querySelectorAll(".navbar li a");
 
-      document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
-    }
+  langContent.nav.forEach((text, i) => navItems[i].textContent = text);
+
+  document.getElementById("title-main").textContent = langContent.title;
+  document.getElementById("subtitle-main").textContent = langContent.subtitle;
+  document.getElementById("video-frame").src = langContent.video;
+  document.getElementById("ofer-story-text").innerHTML = langContent.oferStory;
+  document.getElementById("vision-text").innerHTML = langContent.vision;
+  document.getElementById("goals-text").innerHTML = langContent.goals;
+  document.getElementById("gallery-text").innerHTML = langContent.gallery;
+  document.getElementById("support-text").innerHTML = langContent.support;
+  document.getElementById("cta-text").textContent = langContent.cta;
+  document.getElementById("footer-text").textContent = langContent.footer;
+
+  // ✅ This line updates the donate button based on language
+  document.getElementById("donateButton").textContent = lang === 'he' ? 'תרמו עכשיו' : 'Donate Now';
+
+  // Set direction of page
+  document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
+}
+
 
     // Default language
     setLang('en');
