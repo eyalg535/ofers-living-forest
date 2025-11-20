@@ -17,7 +17,7 @@ header h1 {
   margin: 0;
 }
 
-.language-toggle {
+.lang-switch {
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -29,16 +29,29 @@ header h1 {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  z-index: 1100; /* Ensure it's above navbar and overlays */
+  z-index: 1100; /* Always above navbar */
 }
+
+.lang-switch a {
+  text-decoration: none;
+  color: #2e4d38;
+  margin: 0 0.3rem;
+}
+
 @media (max-width: 480px) {
-  .language-toggle {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
+  .lang-switch {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
     top: 0.5rem;
     right: 0.5rem;
   }
 }
+
+body[dir="rtl"] .lang-switch {
+  right: auto;
+  left: 1rem;
+}
+
 
 
 .container {
