@@ -20,7 +20,7 @@ header h1 {
 .lang-switch {
   position: fixed;
   top: 1rem;
-  left: 1rem; /* ⬅️ was 'right', now it's 'left' */
+  left: 1rem;
   background: white;
   border: 1px solid #2e4d38;
   font-weight: bold;
@@ -30,10 +30,12 @@ header h1 {
   padding: 0.5rem 1rem;
   border-radius: 6px;
   z-index: 1100;
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
   align-items: center;
-  min-width: 120px; /* ⬅️ fixes inconsistent width */
+  gap: 0.6rem;
+  white-space: nowrap;
+  width: fit-content; /* 👈 key change */
+  max-width: 100%;
 }
 
 .lang-switch a {
