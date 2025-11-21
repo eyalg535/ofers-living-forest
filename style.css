@@ -1,43 +1,73 @@
-<style>
-  .lang-switch {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: white;
-    border: 1px solid #2e4d38;
-    font-weight: bold;
-    color: #2e4d38;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    z-index: 1100;
-  }
-
-  @media (max-width: 768px) {
-    .lang-switch {
-      position: static;
-      margin: 1rem auto;
-      display: inline-block;
-    }
-    .navbar {
-      flex-direction: column;
-    }
-    .navbar ul {
-      margin-top: 1rem;
-    }
-  }
-</style>
-
-<div class="navbar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-  <ul style="display: flex; flex-wrap: wrap; justify-content: center; width: 100%;">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#ofer-story">Ofer's Story</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#support">Support</a></li>
-  </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ofer's Living Forest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
   <div class="lang-switch">
     <a href="#" onclick="setLang('en')">English</a> |
     <a href="#" onclick="setLang('he')">עברית</a>
   </div>
-</div>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#story">Ofer’s Story</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#support">Support</a></li>
+    </ul>
+  </nav>
+
+  <header class="video-section" id="home">
+    <div class="container">
+      <h1 id="title-main">Ofer's Living Forest</h1>
+      <p id="subtitle-main">A food forest in memory of our beloved brother</p>
+      <div class="video">
+        <iframe id="video-frame" src="https://www.youtube.com/embed/NkzDX4N5Sb0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="section" id="story">
+      <h2>Ofer’s Life Story</h2>
+      <p id="ofer-story-text">Ofer Gerby was born on March 2, 1984, on an Israeli Air Force base where his father served...</p>
+    </section>
+
+    <section class="section" id="vision">
+      <h2>Our Vision</h2>
+      <p id="vision-text">To create a vibrant, sustainable food forest in Israel that celebrates Ofer’s life, passions, and spirit of giving...</p>
+    </section>
+
+    <section class="section" id="goals">
+      <h2>Our Goals</h2>
+      <p id="goals-text">Establish a permaculture forest with native and fruit-bearing trees, build learning stations with Ofer’s story...</p>
+    </section>
+
+    <section class="section" id="gallery">
+      <h2>Gallery</h2>
+      <p id="gallery-text">Photos and videos coming soon...</p>
+    </section>
+
+    <section class="section" id="support">
+      <h2>Support the Forest</h2>
+      <p id="support-text">Your support helps us plant trees, create education spaces, and keep Ofer’s memory alive.</p>
+    </section>
+
+    <section class="cta">
+      <p id="cta-text">Help grow Ofer’s forest with your support.</p>
+      <a id="donate-btn" href="#donate">Donate Now</a>
+    </section>
+  </div>
+
+  <footer>
+    <p id="footer-text">© 2025 Ofer’s Living Forest. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
