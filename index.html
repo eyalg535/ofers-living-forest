@@ -71,9 +71,6 @@
     <a href="#donate" id="donateButton" class="donate-button">Donate Now</a>
 
   </div>
-    <div id="donation-message" style="display: none; text-align: center; margin-top: 1rem; font-weight: bold; color: #2e4d38;">
-  Thank you for your donation!
-</div>
   <footer>
     <p id="footer-text">In loving memory of Ofer • Built with love by his family</p>
   </footer>
@@ -194,6 +191,12 @@
     });
   });
 </script>
+<div id="thankYouModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" onclick="closeModal()">&times;</span>
+    <p>Thank you for your donation!</p>
+  </div>
+</div>
 
 
 </body>
