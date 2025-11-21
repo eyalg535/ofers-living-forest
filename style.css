@@ -86,16 +86,7 @@ body[dir="rtl"] .lang-switch {
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
-.cta a,
-.donate-button {
-  background: #2e4d38;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-  display: inline-block;
-}
+.cta a { background: #2e4d38; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 4px; font-weight: bold; }
 
 footer {
   background: #2e4d38;
