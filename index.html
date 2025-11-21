@@ -197,6 +197,18 @@
     <p>Thank you for your donation!</p>
   </div>
 </div>
+function showThankYouMessage() {
+  document.getElementById("thankYouModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("thankYouModal").style.display = "none";
+}
+
+document.getElementById("donateButton").addEventListener("click", function(event) {
+  event.preventDefault(); // remove if you want to scroll to the donate section
+  showThankYouMessage();
+});
 
 
 </body>
