@@ -200,3 +200,14 @@ html {
   padding: 2rem;
   max-width: 900px;
 }
+
+.donate-button {
+  background-color: #2e4d38;
+  color: white !important;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  display: inline-block;
+}
+
