@@ -168,50 +168,30 @@
   });
 </script>
     
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const donateButtons = document.querySelectorAll(".donate-button");
-    const message = document.getElementById("donation-message");
-
-    donateButtons.forEach(button => {
-      button.addEventListener("click", function (e) {
-        e.preventDefault(); // prevent link action if it's a dummy link
-
-        // Optional: detect language
-        const isHebrew = document.documentElement.getAttribute("lang") === "he";
-
-        message.textContent = isHebrew ? "תודה על התרומה!" : "Thank you for your donation!";
-        message.style.display = "block";
-
-        // Optional: hide after a few seconds
-        setTimeout(() => {
-          message.style.display = "none";
-        }, 4000);
-      });
-    });
-  });
-</script>
-<div id="thankYouModal" class="modal">
+<!-- Modal -->
+<div id="donationModal" class="modal">
   <div class="modal-content">
     <span class="close-button" onclick="closeModal()">&times;</span>
-    <p>Thank you for your donation!</p>
+    <p id="thankYouText">Thank you for your donation!</p>
   </div>
 </div>
-    <script>
-function showThankYouMessage() {
-  document.getElementById("thankYouModal").style.display = "block";
-}
+<script>document.addEventListener("DOMContentLoaded", function () {
+  const donateButton = document.getElementById("donateButton");
+  const modal = document.getElementById("donationModal");
+  const thankYouText = document.getElementById("thankYouText");
+
+  donateButton.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent scrolling to #donate
+    const isHebrew = document.documentElement.lang === "he";
+    thankYouText.innerText = isHebrew ? "תודה על התרומה שלך!" : "Thank you for your donation!";
+    modal.style.display = "block";
+  });
+});
 
 function closeModal() {
-  document.getElementById("thankYouModal").style.display = "none";
+  document.getElementById("donationModal").style.display = "none";
 }
-
-document.getElementById("donateButton").addEventListener("click", function(event) {
-  event.preventDefault(); // remove if you want to scroll to the donate section
-  showThankYouMessage();
-});
-      </script>
-
+</script>
 
 </body>
 </html>
