@@ -20,7 +20,7 @@ header h1 {
 .lang-switch {
   position: fixed;
   top: 1rem;
-  right: 1rem;
+  left: 1rem; /* Changed from right to left */
   background: white;
   border: 1px solid #2e4d38;
   font-weight: bold;
@@ -43,9 +43,10 @@ header h1 {
     font-size: 0.85rem;
     padding: 0.4rem 0.6rem;
     top: 0.5rem;
-    right: 0.5rem;
+    left: 0.5rem; /* Also updated for mobile */
   }
 }
+
 
 body[dir="rtl"] .lang-switch {
   right: auto;
