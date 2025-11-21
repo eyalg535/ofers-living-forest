@@ -123,6 +123,47 @@ footer {
   text-decoration: none;
   font-weight: bold;
 }
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #2e4d38;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    text-align: right;
+  }
+
+  .navbar {
+    text-align: left;
+    position: relative;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    background: #e0f2e9;
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .navbar li {
+    margin: 0.8rem 0;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
