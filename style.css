@@ -20,7 +20,7 @@ header h1 {
 .lang-switch {
   position: fixed;
   top: 1rem;
-  left: 1rem; /* Changed from right to left */
+  left: 1rem; /* ⬅ Move to left instead of right */
   background: white;
   border: 1px solid #2e4d38;
   font-weight: bold;
@@ -29,7 +29,9 @@ header h1 {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  z-index: 1100; /* Always above navbar */
+  z-index: 1100;
+  white-space: nowrap; /* ⬅ Prevent multi-line */
+  display: inline-block; /* ⬅ Ensures button shrinks to fit content */
 }
 
 .lang-switch a {
@@ -43,9 +45,10 @@ header h1 {
     font-size: 0.85rem;
     padding: 0.4rem 0.6rem;
     top: 0.5rem;
-    left: 0.5rem; /* Also updated for mobile */
+    left: 0.5rem;
   }
 }
+
 
 
 body[dir="rtl"] .lang-switch {
