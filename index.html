@@ -167,6 +167,33 @@
     navLinks.classList.toggle("active");
   });
 </script>
+    <div id="donation-message" style="display: none; text-align: center; margin-top: 1rem; font-weight: bold; color: #2e4d38;">
+  Thank you for your donation!
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const donateButtons = document.querySelectorAll(".donate-button");
+    const message = document.getElementById("donation-message");
+
+    donateButtons.forEach(button => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault(); // prevent link action if it's a dummy link
+
+        // Optional: detect language
+        const isHebrew = document.documentElement.getAttribute("lang") === "he";
+
+        message.textContent = isHebrew ? "תודה על התרומה!" : "Thank you for your donation!";
+        message.style.display = "block";
+
+        // Optional: hide after a few seconds
+        setTimeout(() => {
+          message.style.display = "none";
+        }, 4000);
+      });
+    });
+  });
+</script>
+
 
 </body>
 </html>
